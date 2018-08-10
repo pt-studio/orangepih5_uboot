@@ -1000,8 +1000,7 @@ int gpio_request_early(void  *user_gpio_list, __u32 group_count_max, __s32 set_g
         {
             if(pre_port == PORT_TYPE_AXP)//上一个处理的GPIO为axp类型
             {
-				gpio_set_axpgpio_value(0, port_num, tmp_group_data_data);//将上一个GPIO的设置值写回寄存器
-				//gpio_set_axpgpio_value(0, pre_port_num, tmp_group_data_data);//将上一个GPIO的设置值写回寄存器
+				gpio_set_axpgpio_value(0, pre_port_num, tmp_group_data_data);//将上一个GPIO的设置值写回寄存器
             }
             else//上一个处理的GPIO为cpux和cpus类型
             {
